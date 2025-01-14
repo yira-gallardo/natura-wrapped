@@ -1,37 +1,70 @@
 import Image from "next/image";
 import React from "react";
+import DATA from "../data.json";
 
 interface DigitalPresenceProps {
   clientsReached?: number;
 }
 
+interface DataItem {
+  tipo: string;
+  ranking: number;
+  codigo: number;
+  nombreCdn: string;
+  nombreSitio: string;
+  urlSitio: string;
+  codigoVol: number;
+  facturacion: number;
+  top1Mes?: string | null;
+  top1Total?: number | null;
+  top2Mes?: string | null;
+  top2Total?: number | null;
+  top3Mes?: string | null;
+  top3Total?: number | null;
+  vendidos: number;
+  producto1Codigo?: string | null;
+  producto1Cantidad?: number | null;
+  producto1Nombre?: string | null;
+  producto2Codigoo?: string | null;
+  producto2Cantidad?: number | null;
+  producto2Nombre?: string | null;
+  producto3Codigo?: string | null;
+  producto3Cantidad?: number | null;
+  producto3Nombre?: string | null;
+  producto4Codigo?: string | null;
+  producto4Cantidad?: number | null;
+  producto4Nombre?: string | null;
+  producto5Codigo?: string | null;
+  producto5Cantidad?: number | null;
+  producto5Nombre?: string | null;
+  clientes: number;
+}
+
+const data: DataItem = {
+  ...DATA[0],
+  nombreSitio: String(DATA[0].nombreSitio),
+};
+
+const formatNumberToCurrency = (number: number) => {
+  return new Intl.NumberFormat("es-MX", {
+    style: "currency",
+    currency: "MXN",
+  }).format(number);
+};
+
+const formatNumber = (number: number) => {
+  return new Intl.NumberFormat("es-MX").format(number);
+};
+
 export default function DigitalPresence({}: DigitalPresenceProps) {
-  const topProducts = [
-    {
-      name: "Crema Hidratante Premium",
-      sales: 1500,
-      image: "/img/img-1.jpg",
-      subtitle: "Tu producto más vendido",
-    },
-    {
-      name: "Serum Facial Revitalizante",
-      sales: 1200,
-      image: "/img/img-1.jpg",
-      subtitle: "El favorito de tus clientes",
-    },
-    {
-      name: "Mascarilla de Arcilla",
-      sales: 1000,
-      image: "/img/img-1.jpg",
-      subtitle: "Un éxito constante",
-    },
-    {
-      name: "Mascarilla de Arcilla",
-      sales: 1000,
-      image: "/img/img-1.jpg",
-      subtitle: "Un éxito constante",
-    },
-  ];
+  const products = Array.from({ length: 5 }, (_, i) => {
+    const index = i + 1;
+    return {
+      image: data[`producto${index}Codigo` as keyof DataItem] || null,
+      name: data[`producto${index}Nombre` as keyof DataItem] || null,
+      sales: data[`producto${index}Cantidad` as keyof DataItem] || null,
+    };
+  }).filter((product) => product.image && product.name && product.sales);
 
   return (
     <main>
@@ -52,11 +85,11 @@ export default function DigitalPresence({}: DigitalPresenceProps) {
             ¡Cerramos el 2024 con grandes logros!
           </h2>
           <p className="text-lg mt-4 max-w-4xl text-gray-500 font-bold">
-            Queridx [Nombre] Consultxr Natura Digital, este año fue increíble
-            gracias a tu esfuerzo, dedicación y pasión. En este Wrapped CND
-            2024, celebramos tus resultados, reconocemos tus avances y te
-            preparamos para alcanzar nuevas metas en 2025. ¡Échale un vistazo a
-            todo lo que lograste con tu Sitio Natura Digital [Click Aquí] en el
+            Queridx {data.nombreCdn} Consultxr Natura Digital, este año fue
+            increíble gracias a tu esfuerzo, dedicación y pasión. En este
+            Wrapped CND 2024, celebramos tus resultados, reconocemos tus avances
+            y te preparamos para alcanzar nuevas metas en 2025. ¡Échale un
+            vistazo a todo lo que lograste con tu Sitio Natura Digital en el
             2024!
           </p>
         </div>
@@ -78,7 +111,9 @@ export default function DigitalPresence({}: DigitalPresenceProps) {
             </div>
             <div className="w-3/4">
               <h3 className="text-lg">Ventas totales alcanzadas</h3>
-              <p className="text-8xl font-bold text-highlight ">$X,XXX MXN</p>
+              <p className="text-8xl font-bold text-highlight ">
+                {formatNumberToCurrency(data.facturacion)} MXN
+              </p>
               <p className="text-2xl italic text-highlight">
                 Tus resultados son el reflejo de tu compromiso. ¡Sigue
                 brillando!
@@ -105,30 +140,48 @@ export default function DigitalPresence({}: DigitalPresenceProps) {
               mejores resultados.
             </p>
           </div>
-          <div className="text-left mb-8">
-            <h2 className="text-2xl text-accent uppercase font-black">Mes 1</h2>
-            <p className="text-lg font-bold">Ventas totales:</p>
-            <p className="mb-2 text-[120px]  font-black">$XX,XXX MXN</p>
-            <p className="text-xl italic font-bold">
-              ¡Este mes marcaste la diferencia con tu dedicación y entusiasmo!
-            </p>
-          </div>
-          <div className="text-right mb-8">
-            <h2 className="text-2xl text-accent uppercase font-black">Mes 2</h2>
-            <p className="text-lg font-bold">Ventas totales:</p>
-            <p className="mb-2 text-[120px]  font-black">$XX,XXX MXN</p>
-            <p className="text-xl italic font-bold">
-              Tus logros nos inspiran a seguir construyendo grandes historias.
-            </p>
-          </div>
-          <div className="text-left mb-8">
-            <h2 className="text-2xl text-accent uppercase font-black">Mes 3</h2>
-            <p className="text-lg font-bold">Ventas totales:</p>
-            <p className="mb-2 text-[120px]  font-black">$XX,XXX MXN</p>
-            <p className="text-xl italic font-bold">
-              Un mes donde todo fue posible gracias a tu esfuerzo.
-            </p>
-          </div>
+          {data.top1Mes && data.top1Total && (
+            <div className="text-left mb-8">
+              <h2 className="text-2xl text-accent uppercase font-black">
+                {data.top1Mes}
+              </h2>
+              <p className="text-lg font-bold">Ventas totales:</p>
+              <p className="mb-2 text-[120px]  font-black">
+                {formatNumberToCurrency(data.top1Total)} MXN
+              </p>
+              <p className="text-xl italic font-bold">
+                ¡Este mes marcaste la diferencia con tu dedicación y entusiasmo!
+              </p>
+            </div>
+          )}
+          {data.top2Mes && data.top2Total && (
+            <div className="text-right mb-8">
+              <h2 className="text-2xl text-accent uppercase font-black">
+                {data.top2Mes}
+              </h2>
+              <p className="text-lg font-bold">Ventas totales:</p>
+              <p className="mb-2 text-[120px]  font-black">
+                {formatNumberToCurrency(data.top2Total)} MXN
+              </p>
+              <p className="text-xl italic font-bold">
+                Tus logros nos inspiran a seguir construyendo grandes historias.
+              </p>
+            </div>
+          )}
+          {data.top3Mes && data.top3Total && (
+            <div className="text-left">
+              <h2 className="text-2xl text-accent uppercase font-black">
+                {data.top3Mes}
+              </h2>
+              <p className="text-lg font-bold">Ventas totales:</p>
+              <p className="mb-2 text-[120px]  font-black">
+                {formatNumberToCurrency(data.top3Total)} MXN
+              </p>
+              <p className="text-xl italic font-bold">
+                ¡Tu pasión y compromiso son el motor de tu éxito!
+              </p>
+            </div>
+          )}
           <div className="text-center mt-32 max-w-lg mx-auto">
             <p className="uppercase text-xl font-bold">
               Cada mes fue una oportunidad para crecer, y tú lo aprovechaste al
@@ -157,7 +210,9 @@ export default function DigitalPresence({}: DigitalPresenceProps) {
             <h3 className="text-xl font-semibold text-[#F35866]">
               Total de productos vendidos
             </h3>
-            <p className="text-8xl font-bold text-[#F35866] mb-4">$X,XXX</p>
+            <p className="text-8xl font-bold text-[#F35866] mb-4">
+              {formatNumber(data.vendidos)}
+            </p>
           </div>
           <div className="max-w-4xl mx-auto">
             <h4 className="text-lg uppercase font-semibold mb-4 text-highlight">
@@ -208,18 +263,17 @@ export default function DigitalPresence({}: DigitalPresenceProps) {
             año.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 my-16">
-            {topProducts.map((product, index) => (
+            {products.map((product, index) => (
               <div key={index} className="bg-primary p-12 text-white">
                 <div className="relative aspect-square mb-4 overflow-hidden bg-white">
-                  <Image
-                    src={product.image}
-                    alt={product.name}
+                  {/* <Image
+                    src={typeof product.image === "string" ? product.image : ""}
+                    alt={String(product.name ?? "")}
                     layout="fill"
                     objectFit="cover"
-                  />
+                  /> */}
                 </div>
                 <h4 className="text-lg font-bold">{product.name}</h4>
-                <p>{product.subtitle}</p>
                 <p className="text-2xl font-black mt-2">
                   {product.sales} unidades vendidas
                 </p>
