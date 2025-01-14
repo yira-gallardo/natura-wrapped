@@ -233,41 +233,42 @@ export default function DigitalPresence({}: DigitalPresenceProps) {
         </div>
       </section>
       {/* SECTION 6 */}
-      <section className="w-full bg-accent text-gray-800 py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-5xl font-bold text-center mb-4 text-white">
-            Conectando con el mundo desde tu sitio Natura Digital
-          </h2>
-          <p className="text-xl text-center text-white mb-12">
-            Este año, tus esfuerzos en el mundo digital marcaron la diferencia.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-pink-100 p-8 rounded-xl shadow-md">
-              <h3 className="text-2xl font-semibold mb-4 text-pink-700">
+      <section className="w-full bg-accent py-40 text-white relative overflow-hidden">
+        <div className="absolute top-[-160px] left-[-200px] p-4 z-0">
+          <Image src="/img/icon-1.png" width={350} height={100} alt="Form" />
+        </div>
+        <div className="container mx-auto max-w-7xl">
+          <div className="flex justify-center items-center">
+            <div className="w-2/6 text-left">
+              <h2 className="text-4xl font-bold">
+                Conectando con el mundo desde tu sitio Natura Digital
+              </h2>
+              <p className="text-xl text-highlight">
+                Este año, tus esfuerzos en el mundo digital marcaron la
+                diferencia.
+              </p>
+            </div>
+            <div className="w-4/6">
+              <h3 className="text-2xl font-semibold text-highlight mb-4">
                 Clientes alcanzados
               </h3>
-              <p className="text-5xl font-bold text-gray-800 mb-4"></p>
-              <p className="text-gray-600">
+              <p className="text-4xl font-bold mb-4">
                 Cada cliente representa una conexión auténtica, creada a través
                 de tu compromiso y visión.
               </p>
-            </div>
-
-            <div className="bg-pink-100 p-8 rounded-xl shadow-md">
-              <h3 className="text-2xl font-semibold mb-4 text-pink-700">
+              <h3 className="text-2xl font-semibold text-highlight mb-4">
                 Tu impacto digital
               </h3>
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <span className="text-pink-500 mr-2">•</span>
+              <ul className="text-4xl font-bold">
+                <li className="flex items-start mb-2">
+                  <span className="text-highlight mr-2">•</span>
                   <span>
                     Tu sitio digital fue una puerta al éxito, llevando bienestar
                     y belleza a más personas.
                   </span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-pink-500 mr-2">•</span>
+                  <span className="text-highlight mr-2">•</span>
                   <span>
                     Eres un ejemplo de cómo aprovechar el mundo digital para
                     transformar vidas.
@@ -276,9 +277,8 @@ export default function DigitalPresence({}: DigitalPresenceProps) {
               </ul>
             </div>
           </div>
-
-          <div className="mt-12 bg-pink-100 p-8 rounded-xl shadow-md text-center">
-            <p className="text-2xl italic text-gray-800">
+          <div className="mt-12 bg-highlight p-8 text-center text-white">
+            <p className="text-xl italic text-accent font-black">
               En 2025, sigamos construyendo conexiones que impulsen tu negocio
               al siguiente nivel. ¡El futuro digital es tuyo!
             </p>
@@ -286,27 +286,30 @@ export default function DigitalPresence({}: DigitalPresenceProps) {
         </div>
       </section>
       {/* SECTION 7*/}
-      <div className="w-full bg-[#B060E3] text-white py-16">
+      <div className="w-full bg-highlightBg text-white py-40 relative overflow-hidden">
+        <div className="absolute top-[-160px] right-[-200px] p-4 z-0">
+          <Image src="/img/icon-5.png" width={350} height={100} alt="Form" />
+        </div>
+        <div className="absolute bottom-[-160px] left-[-200px] p-4 z-0">
+          <Image src="/img/icon-5.png" width={350} height={100} alt="Form" />
+        </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-5xl font-bold text-center mb-4">
+          <h2 className="text-5xl font-bold text-center mb-4 text-white ">
             El esfuerzo tiene sus recompensas
           </h2>
-          <p className="text-xl text-center text-white/90 mb-12">
+          <p className="text-xl text-center  mb-12 text-white font-bold">
             Celebramos tu lugar como un Consultxr Natura Digital.
           </p>
-
-          <div className="bg-white text-gray-800 p-8 rounded-xl shadow-lg text-center mb-12">
-            <h3 className="text-3xl font-semibold mb-4 text-[#B060E3]">
+          <div className="bg-white text-gray-800 p-8 text-center mb-12 max-w-xl mx-auto">
+            <h3 className="text-xl font-semibold mb-4 text-primary">
               Rango alcanzado:
             </h3>
-            <p className="text-6xl font-bold text-[#B060E3] mb-4">CND Top</p>
+            <p className="text-6xl font-black text-primary mb-4">CND Top</p>
           </div>
-          <div className="bg-[#D9B6F1] p-8 rounded-xl shadow-lg text-center">
-            <p className="text-2xl italic text-gray-800">
-              Tu dedicación transforma vidas y eleva la experiencia Natura.
-              ¡Gracias por ser ejemplo!
-            </p>
-          </div>
+          <p className="text-xl italic  text-center">
+            Tu dedicación transforma vidas y eleva la experiencia Natura.
+            ¡Gracias por ser ejemplo!
+          </p>
         </div>
       </div>
     </main>
