@@ -14,6 +14,7 @@ export default {
         accent: "#F35866",
         warning: "#FD5F54",
         highlight: "#FCD96C",
+        highlightBg: "#e0c15b",
         background: "#e8e7f7",
       },
     },

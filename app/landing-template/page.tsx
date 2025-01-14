@@ -2,11 +2,10 @@ import Image from "next/image";
 import React from "react";
 
 interface DigitalPresenceProps {
-  clientsReached?: number; // Total number of clients reached :)
+  clientsReached?: number;
 }
-export default function DigitalPresence({
-  clientsReached = 0,
-}: DigitalPresenceProps) {
+
+export default function DigitalPresence({}: DigitalPresenceProps) {
   const topProducts = [
     {
       name: "Crema Hidratante Premium",
@@ -19,12 +18,6 @@ export default function DigitalPresence({
       sales: 1200,
       image: "/img/img-1.jpg",
       subtitle: "El favorito de tus clientes",
-    },
-    {
-      name: "Mascarilla de Arcilla",
-      sales: 1000,
-      image: "/img/img-1.jpg",
-      subtitle: "Un éxito constante",
     },
     {
       name: "Mascarilla de Arcilla",
@@ -58,7 +51,7 @@ export default function DigitalPresence({
           <h2 className="text-4xl text-secondary mt-4 font-black">
             ¡Cerramos el 2024 con grandes logros!
           </h2>
-          <p className="text-lg mt-4 max-w-4xl text-gray-600">
+          <p className="text-lg mt-4 max-w-4xl text-gray-500 font-bold">
             Queridx [Nombre] Consultxr Natura Digital, este año fue increíble
             gracias a tu esfuerzo, dedicación y pasión. En este Wrapped CND
             2024, celebramos tus resultados, reconocemos tus avances y te
@@ -69,124 +62,125 @@ export default function DigitalPresence({
         </div>
       </section>
       {/* SECTION 2 */}
-      <div className="w-full bg-secondary text-white py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-5xl font-bold text-center mb-4">
-            Tus logros hablan por sí solos
-          </h2>
-          <p className="text-xl text-center text-white/90 mb-12">
-            Este año, rompiste barreras y alcanzaste nuevas alturas.
-          </p>
-
-          <div className="bg-white text-gray-800 p-8 rounded-xl shadow-lg text-center mb-12">
-            <h3 className="text-3xl font-semibold mb-4 text-[#E963D2]">
-              Ventas totales alcanzadas
-            </h3>
-            <p className="text-6xl font-bold text-[#E963D2] mb-4">$X,XXX MXN</p>
-          </div>
-
-          <div className="bg-[#F5B6E8] p-8 rounded-xl shadow-lg text-center">
-            <p className="text-2xl italic text-gray-800">
-              Tus resultados son el reflejo de tu compromiso. ¡Sigue brillando!
-            </p>
+      <div className="w-full bg-primary text-white py-60 relative overflow-hidden">
+        <div className="absolute top-[-120px] right-[-60px] p-4 z-0">
+          <Image src="/img/icon-1.png" width={450} height={100} alt="Form" />
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-center  gap-12">
+            <div className="w-1/4">
+              <h2 className="text-4xl font-black uppercase">
+                Tus logros hablan por sí solos
+              </h2>
+              <p className="text-xl">
+                Este año, rompiste barreras y alcanzaste nuevas alturas.
+              </p>
+            </div>
+            <div className="w-3/4">
+              <h3 className="text-lg">Ventas totales alcanzadas</h3>
+              <p className="text-8xl font-bold text-highlight ">$X,XXX MXN</p>
+              <p className="text-2xl italic text-highlight">
+                Tus resultados son el reflejo de tu compromiso. ¡Sigue
+                brillando!
+              </p>
+            </div>
           </div>
         </div>
       </div>
       {/* SECTION 3 */}
-      <section className="min-h-screen w-full bg-gradient-to-r from-[#E065B2] to-[#F87C7C] py-20">
-        <div className="container mx-auto px-4">
+      <section className="min-h-screen w-full bg-highlightBg py-40 text-white relative overflow-hidden">
+        <div className="absolute top-[400px] left-[-300px] p-4 z-0">
+          <Image src="/img/icon-2.png" width={500} height={100} alt="Form" />
+        </div>
+        <div className="absolute bottom-[-160px] right-[-300px] p-4 z-0">
+          <Image src="/img/icon-2.png" width={700} height={100} alt="Form" />
+        </div>
+        <div className="container mx-auto px-4 relative z-10 text-white">
           <div className="mb-16 text-center">
-            <h1 className="mb-4 text-9xl font-black text-white md:text-6xl">
+            <h1 className="text-9xl font-black md:text-6xl uppercase">
               Tus mejores momentos en 2024
             </h1>
-            <p className="mx-auto max-w-3xl text-xl text-white/90">
+            <p className="mx-auto text-2xl font-bold">
               Estos fueron los meses donde brillaste al máximo y alcanzaste tus
               mejores resultados.
             </p>
           </div>
-          <div className="flex flex-col space-y-6">
-            {/* Card 1 */}
-            <div className="rounded-lg bg-white/10 p-6 backdrop-blur-sm">
-              <h2 className="mb-4 text-3xl font-bold text-white">Mes 1</h2>
-              <p className="mb-2 text-6xl text-highlight font-black">
-                Ventas totales: $XX,XXX MXN
-              </p>
-              <p className="text-xl italic text-white/80 ">
-                ¡Este mes marcaste la diferencia con tu dedicación y entusiasmo!
-              </p>
-            </div>
-
-            {/* Card 2 */}
-            <div className="rounded-lg bg-white/10 p-6 backdrop-blur-sm">
-              <h2 className="mb-4 text-3xl font-bold text-white">Mes 2</h2>
-              <p className="mb-2 text-6xl text-highlight font-black">
-                Ventas totales: $XX,XXX MXN
-              </p>
-              <p className="text-xl italic text-white/80">
-                Tus logros nos inspiran a seguir construyendo grandes historias.
-              </p>
-            </div>
-
-            {/* Card 3 */}
-            <div className="rounded-lg bg-white/10 p-6 backdrop-blur-sm">
-              <h2 className="mb-4 text-3xl font-bold text-white">Mes 3</h2>
-              <p className="mb-2 text-6xl text-highlight font-black">
-                Ventas totales: $XX,XXX MXN
-              </p>
-              <p className=" italic text-white/80 text-xl">
-                Un mes donde todo fue posible gracias a tu esfuerzo.
-              </p>
-            </div>
+          <div className="text-left mb-8">
+            <h2 className="text-2xl text-accent uppercase font-black">Mes 1</h2>
+            <p className="text-lg font-bold">Ventas totales:</p>
+            <p className="mb-2 text-[120px]  font-black">$XX,XXX MXN</p>
+            <p className="text-xl italic font-bold">
+              ¡Este mes marcaste la diferencia con tu dedicación y entusiasmo!
+            </p>
           </div>
-          <div className="text-center mt-8">
-            <p className="text-white text-lg md:text-xl lg:text-2xl font-semibold px-4 py-6 rounded-lg">
+          <div className="text-right mb-8">
+            <h2 className="text-2xl text-accent uppercase font-black">Mes 2</h2>
+            <p className="text-lg font-bold">Ventas totales:</p>
+            <p className="mb-2 text-[120px]  font-black">$XX,XXX MXN</p>
+            <p className="text-xl italic font-bold">
+              Tus logros nos inspiran a seguir construyendo grandes historias.
+            </p>
+          </div>
+          <div className="text-left mb-8">
+            <h2 className="text-2xl text-accent uppercase font-black">Mes 3</h2>
+            <p className="text-lg font-bold">Ventas totales:</p>
+            <p className="mb-2 text-[120px]  font-black">$XX,XXX MXN</p>
+            <p className="text-xl italic font-bold">
+              Un mes donde todo fue posible gracias a tu esfuerzo.
+            </p>
+          </div>
+          <div className="text-center mt-32 max-w-lg mx-auto">
+            <p className="uppercase text-xl font-bold">
               Cada mes fue una oportunidad para crecer, y tú lo aprovechaste al
-              máximo. ¡Vamos por más meses memorables en 2025!
+              máximo. <br></br>¡Vamos por más meses memorables en 2025!
             </p>
           </div>
         </div>
       </section>
       {/* SECTION 4 */}
-      <section className="w-full bg-accent text-white py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-5xl font-bold text-center mb-4">
+      <section className="w-full bg-accent text-white py-40 relative overflow-hidden">
+        <div className="absolute top-[-40px] left-[-200px] p-4 z-0">
+          <Image src="/img/icon-3.png" width={400} height={100} alt="Form" />
+        </div>
+        <div className="absolute bottom-[-40px] right-[-200px] p-4 z-0">
+          <Image src="/img/icon-3-y.png" width={400} height={100} alt="Form" />
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-6xl font-bold text-center uppercase">
             ¡Tus números hablan de éxito!
           </h2>
           <p className="text-xl text-center text-white/90 mb-12">
             Este año, tu esfuerzo y dedicación llevaron nuestros productos a más
             hogares que nunca.
           </p>
-
-          <div className="bg-white text-gray-800 p-8 rounded-xl shadow-lg text-center mb-12">
-            <h3 className="text-3xl font-semibold mb-4 text-[#F35866]">
+          <div className="max-w-4xl bg-white text-gray-800 p-8 mx-auto text-center mb-12">
+            <h3 className="text-xl font-semibold text-[#F35866]">
               Total de productos vendidos
             </h3>
-            <p className="text-6xl font-bold text-[#F35866] mb-4">$X,XXX</p>
+            <p className="text-8xl font-bold text-[#F35866] mb-4">$X,XXX</p>
           </div>
-
-          <div className="bg-[#FFC2C7] p-8 rounded-xl shadow-lg mb-12">
-            <h4 className="text-2xl font-semibold mb-4 text-gray-800">
+          <div className="max-w-4xl mx-auto">
+            <h4 className="text-lg uppercase font-semibold mb-4 text-highlight">
               Reconocimiento:
             </h4>
-            <ul className="space-y-4 text-gray-800">
-              <li className="flex items-start">
-                <span className="text-[#F35866] mr-2">•</span>
+            <ul className="space-y-4 ">
+              <li className="flex items-start text-2xl">
+                <span className="text-highlight mr-2">•</span>
                 <span>
                   Cada producto representa una historia de bienestar que
                   compartiste.
                 </span>
               </li>
-              <li className="flex items-start">
-                <span className="text-[#F35866] mr-2">•</span>
+              <li className="flex items-start text-2xl">
+                <span className="text-highlight mr-2">•</span>
                 <span>
                   Eres parte de los momentos especiales de miles de personas.
                 </span>
               </li>
             </ul>
           </div>
-
-          <div className="bg-[#FFC2C7] p-8 rounded-xl shadow-lg text-center">
-            <p className="text-2xl italic text-gray-800">
+          <div className="max-w-3xl my-16 text-center mx-auto">
+            <p className="text-lg italic">
               Tus ventas reflejan tu pasión y compromiso. En 2025, ¡estamos
               listos para llevar aún más bienestar a los hogares de la mano del
               mundo digital contigo!
@@ -195,51 +189,51 @@ export default function DigitalPresence({
         </div>
       </section>
       {/* SECTION 5 */}
-      <section className="min-h-screen w-full bg-highlight text-gray-800">
-        <div className="max-w-6xl mx-auto p-8">
-          <h2 className="text-7xl font-bold text-center mb-4 text-gray-900">
+      <section className="bg-background py-40 relative overflow-hidden">
+        <div className="absolute top-[-100px] left-[-250px] p-4 z-0">
+          <Image src="/img/icon-5.png" width={350} height={100} alt="Form" />
+        </div>
+        <div className="absolute top-[1000px] right-[-100px] p-4 z-0">
+          <Image src="/img/icon-4.png" width={500} height={100} alt="Form" />
+        </div>
+        <div className="absolute bottom-[-300px] left-[600px] p-4 z-0">
+          <Image src="/img/icon-5.png" width={350} height={100} alt="Form" />
+        </div>
+        <div className="container mx-auto relative z-10">
+          <h2 className="text-6xl font-black text-center text-primary uppercase">
             Tus estrellas favoritas
           </h2>
-          <p className="text-xl text-center text-gray-600 mb-12">
+          <p className="text-xl text-center text-gray-600 mb-12 font-bold">
             Estos fueron los productos que hicieron historia en tu negocio este
             año.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 my-16">
             {topProducts.map((product, index) => (
-              <div
-                key={index}
-                className="bg-pink-100 p-6 rounded-xl hover:scale-105 transition-transform duration-300 shadow-md"
-              >
-                <h3 className="text-lg font-semibold mb-4 text-pink-700">
-                  Top {index + 1} Producto
-                </h3>
-                <div className="relative aspect-square mb-4 rounded-lg overflow-hidden bg-white">
+              <div key={index} className="bg-primary p-12 text-white">
+                <div className="relative aspect-square mb-4 overflow-hidden bg-white">
                   <Image
                     src={product.image}
                     alt={product.name}
                     layout="fill"
                     objectFit="cover"
-                    className="hover:scale-110 transition-transform duration-500"
                   />
                 </div>
-                <h4 className="text-xl font-bold mb-2 text-gray-800">
-                  {product.name}
-                </h4>
-                <p className="text-pink-700">{product.subtitle}</p>
-                <p className="text-sm text-gray-600 mt-2">
+                <h4 className="text-lg font-bold">{product.name}</h4>
+                <p>{product.subtitle}</p>
+                <p className="text-2xl font-black mt-2">
                   {product.sales} unidades vendidas
                 </p>
               </div>
             ))}
           </div>
-          <p className="text-2xl text-center mt-12 italic text-gray-600">
-            "Con cada producto vendido, dejaste huella en el corazón de tus
-            clientas."
+          <p className="text-2xl text-center mt-12 italic text-gray-600 font-black mb-32">
+            Con cada producto vendido, dejaste huella en el corazón de tus
+            clientas.
           </p>
         </div>
       </section>
       {/* SECTION 6 */}
-      <section className="w-full bg-gradient-to-r from-rose-400 via-fuchsia-500 to-purple-500 text-gray-800 py-16">
+      <section className="w-full bg-accent text-gray-800 py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-5xl font-bold text-center mb-4 text-white">
             Conectando con el mundo desde tu sitio Natura Digital
