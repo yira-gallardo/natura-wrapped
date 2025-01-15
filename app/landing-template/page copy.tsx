@@ -3,71 +3,38 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
-import DATA from "../data.json";
 
 interface DigitalPresenceProps {
   clientsReached?: number;
 }
 
-interface DataItem {
-  tipo: string;
-  ranking: number;
-  codigo: number;
-  nombreCdn: string;
-  nombreSitio: string;
-  urlSitio: string;
-  codigoVol: number;
-  facturacion: number;
-  top1Mes?: string | null;
-  top1Total?: number | null;
-  top2Mes?: string | null;
-  top2Total?: number | null;
-  top3Mes?: string | null;
-  top3Total?: number | null;
-  vendidos: number;
-  producto1Codigo?: string | null;
-  producto1Cantidad?: number | null;
-  producto1Nombre?: string | null;
-  producto2Codigoo?: string | null;
-  producto2Cantidad?: number | null;
-  producto2Nombre?: string | null;
-  producto3Codigo?: string | null;
-  producto3Cantidad?: number | null;
-  producto3Nombre?: string | null;
-  producto4Codigo?: string | null;
-  producto4Cantidad?: number | null;
-  producto4Nombre?: string | null;
-  producto5Codigo?: string | null;
-  producto5Cantidad?: number | null;
-  producto5Nombre?: string | null;
-  clientes: number;
-}
-
-const data: DataItem = {
-  ...DATA[0],
-  nombreSitio: String(DATA[0].nombreSitio),
-};
-
-const formatNumberToCurrency = (number: number) => {
-  return new Intl.NumberFormat("es-MX", {
-    style: "currency",
-    currency: "MXN",
-  }).format(number);
-};
-
-const formatNumber = (number: number) => {
-  return new Intl.NumberFormat("es-MX").format(number);
-};
-
 export default function DigitalPresence({}: DigitalPresenceProps) {
-  const products = Array.from({ length: 5 }, (_, i) => {
-    const index = i + 1;
-    return {
-      image: data[`producto${index}Codigo` as keyof DataItem] || null,
-      name: data[`producto${index}Nombre` as keyof DataItem] || null,
-      sales: data[`producto${index}Cantidad` as keyof DataItem] || null,
-    };
-  }).filter((product) => product.image && product.name && product.sales);
+  const topProducts = [
+    {
+      name: "Crema Hidratante Premium",
+      sales: 1500,
+      image: "/img/img-1.jpg",
+      subtitle: "Tu producto más vendido",
+    },
+    {
+      name: "Serum Facial Revitalizante",
+      sales: 1200,
+      image: "/img/img-1.jpg",
+      subtitle: "El favorito de tus clientes",
+    },
+    {
+      name: "Mascarilla de Arcilla",
+      sales: 1000,
+      image: "/img/img-1.jpg",
+      subtitle: "Un éxito constante",
+    },
+    {
+      name: "Mascarilla de Arcilla",
+      sales: 1000,
+      image: "/img/img-1.jpg",
+      subtitle: "Un éxito constante",
+    },
+  ];
 
   return (
     <main>
@@ -137,12 +104,12 @@ export default function DigitalPresence({}: DigitalPresenceProps) {
             transition={{ duration: 0.8, delay: 0.7 }}
             className="text-base md:text-lg mt-4 max-w-4xl text-gray-500 font-bold"
           >
-            Queridx {data.nombreCdn} Consultxr Natura Digital, este año fue
-            increíble gracias a tu esfuerzo, dedicación y pasión. En este
-            Wrapped CND 2024, celebramos tus resultados, reconocemos tus avances
-            y te preparamos para alcanzar nuevas metas en 2025. ¡Échale un
-            vistazo a todo lo que lograste con tu Sitio Natura Digital [Click
-            Aquí] en el 2024!
+            Queridx [Nombre] Consultxr Natura Digital, este año fue increíble
+            gracias a tu esfuerzo, dedicación y pasión. En este Wrapped CND
+            2024, celebramos tus resultados, reconocemos tus avances y te
+            preparamos para alcanzar nuevas metas en 2025. ¡Échale un vistazo a
+            todo lo que lograste con tu Sitio Natura Digital [Click Aquí] en el
+            2024!
           </motion.p>
         </div>
       </section>
@@ -213,7 +180,7 @@ export default function DigitalPresence({}: DigitalPresenceProps) {
                 }}
                 className="text-5xl md:text-8xl font-bold text-highlight"
               >
-                {formatNumberToCurrency(data.facturacion)} MXN
+                $X,XXX MXN
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -271,23 +238,21 @@ export default function DigitalPresence({}: DigitalPresenceProps) {
               mejores resultados.
             </p>
           </motion.div>
-          {data.top1Mes && data.top1Total && (
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-left mb-8"
-            >
-              <h2 className="text-2xl text-accent uppercase font-black">
-                Mes 1
-              </h2>
-              <p className="text-lg font-bold">Ventas totales:</p>
-              <p className="mb-2 text-[120px] font-black">$XX,XXX MXN</p>
-              <p className="text-xl italic font-bold">
-                ¡Este mes marcaste la diferencia con tu dedicación y entusiasmo!
-              </p>
-            </motion.div>
-          )}
+
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-left mb-8"
+          >
+            <h2 className="text-2xl text-accent uppercase font-black">Mes 1</h2>
+            <p className="text-lg font-bold">Ventas totales:</p>
+            <p className="mb-2 text-[120px] font-black">$XX,XXX MXN</p>
+            <p className="text-xl italic font-bold">
+              ¡Este mes marcaste la diferencia con tu dedicación y entusiasmo!
+            </p>
+          </motion.div>
+
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -396,7 +361,7 @@ export default function DigitalPresence({}: DigitalPresenceProps) {
               }}
               className="text-8xl font-bold text-[#F35866] mb-4"
             >
-              {formatNumber(data.vendidos)}
+              $X,XXX
             </motion.p>
           </motion.div>
           <motion.div
@@ -468,17 +433,18 @@ export default function DigitalPresence({}: DigitalPresenceProps) {
             año.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 my-16">
-            {products.map((product, index) => (
+            {topProducts.map((product, index) => (
               <div key={index} className="bg-primary p-12 text-white">
                 <div className="relative aspect-square mb-4 overflow-hidden bg-white">
-                  {/* <Image
-                    src={typeof product.image === "string" ? product.image : ""}
-                    alt={String(product.name ?? "")}
+                  <Image
+                    src={product.image}
+                    alt={product.name}
                     layout="fill"
                     objectFit="cover"
-                  /> */}
+                  />
                 </div>
                 <h4 className="text-lg font-bold">{product.name}</h4>
+                <p>{product.subtitle}</p>
                 <p className="text-2xl font-black mt-2">
                   {product.sales} unidades vendidas
                 </p>
