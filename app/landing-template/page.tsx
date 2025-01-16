@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import DATA from "../data.json";
 
 interface DigitalPresenceProps {
@@ -60,6 +60,8 @@ const formatNumber = (number: number) => {
 };
 
 export default function DigitalPresence({}: DigitalPresenceProps) {
+  const [animatedFacturacion, setAnimatedFacturacion] = useState(0);
+
   const products = Array.from({ length: 5 }, (_, i) => {
     const index = i + 1;
     return {
@@ -68,6 +70,24 @@ export default function DigitalPresence({}: DigitalPresenceProps) {
       sales: data[`producto${index}Cantidad` as keyof DataItem] || null,
     };
   }).filter((product) => product.image && product.name && product.sales);
+
+  useEffect(() => {
+    let start = 0;
+    const end = data.facturacion;
+    const duration = 6000;
+    const increment = end / (duration / 20);
+
+    const timer = setInterval(() => {
+      start += increment;
+      if (start >= end) {
+        start = end;
+        clearInterval(timer);
+      }
+      setAnimatedFacturacion(Math.floor(start));
+    }, 20);
+
+    return () => clearInterval(timer);
+  }, [data.facturacion]);
 
   return (
     <main>
@@ -213,7 +233,8 @@ export default function DigitalPresence({}: DigitalPresenceProps) {
                 }}
                 className="text-5xl md:text-8xl font-bold text-highlight"
               >
-                {formatNumberToCurrency(data.facturacion)} MXN
+                {/* this is the increasing number */}
+                {formatNumberToCurrency(animatedFacturacion)} MXN
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -271,59 +292,63 @@ export default function DigitalPresence({}: DigitalPresenceProps) {
               mejores resultados.
             </p>
           </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-center md:text-left mb-8"
-          >
-            <h2 className="text-xl md:text-2xl text-accent uppercase font-black">
-              Mes 1
-            </h2>
-            <p className="text-base md:text-lg font-bold">Ventas totales:</p>
-            <p className="mb-2 text-5xl md:text-6xl lg:text-7xl font-black leading-none">
-              {data.top1Total || "$XX,XXX MXN"}
-            </p>
-            <p className="text-lg md:text-xl italic font-bold">
-              ¡Este mes marcaste la diferencia con tu dedicación y entusiasmo!
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-center md:text-right mb-8"
-          >
-            <h2 className="text-xl md:text-2xl text-accent uppercase font-black">
-              Mes 2
-            </h2>
-            <p className="text-base md:text-lg font-bold">Ventas totales:</p>
-            <p className="mb-2 text-5xl md:text-6xl lg:text-7xl font-black leading-none">
-              $XX,XXX MXN
-            </p>
-            <p className="text-lg md:text-xl italic font-bold">
-              Tus logros nos inspiran a seguir construyendo grandes historias.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="text-center md:text-left mb-8"
-          >
-            <h2 className="text-xl md:text-2xl text-accent uppercase font-black">
-              Mes 3
-            </h2>
-            <p className="text-base md:text-lg font-bold">Ventas totales:</p>
-            <p className="mb-2 text-5xl md:text-6xl lg:text-7xl font-black leading-none">
-              $XX,XXX MXN
-            </p>
-            <p className="text-lg md:text-xl italic font-bold">
-              Un mes donde todo fue posible gracias a tu esfuerzo.
-            </p>
-          </motion.div>
-
+          {data.top1Mes && data.top1Total && (
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-center md:text-left mb-8"
+            >
+              <h2 className="text-xl md:text-2xl text-accent uppercase font-black">
+                Mes 1
+              </h2>
+              <p className="text-base md:text-lg font-bold">Ventas totales:</p>
+              <p className="mb-2 text-5xl md:text-6xl lg:text-7xl font-black leading-none">
+                {formatNumberToCurrency(data.top1Total)} MXN
+              </p>
+              <p className="text-lg md:text-xl italic font-bold">
+                ¡Este mes marcaste la diferencia con tu dedicación y entusiasmo!
+              </p>
+            </motion.div>
+          )}
+          {data.top2Mes && data.top2Total && (
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="text-center md:text-right mb-8"
+            >
+              <h2 className="text-xl md:text-2xl text-accent uppercase font-black">
+                Mes 2
+              </h2>
+              <p className="text-base md:text-lg font-bold">Ventas totales:</p>
+              <p className="mb-2 text-5xl md:text-6xl lg:text-7xl font-black leading-none">
+                {formatNumberToCurrency(data.top2Total)} MXN
+              </p>
+              <p className="text-lg md:text-xl italic font-bold">
+                ¡Este mes marcaste la diferencia con tu dedicación y entusiasmo!
+              </p>
+            </motion.div>
+          )}
+          {data.top3Mes && data.top3Total && (
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="text-center md:text-left mb-8"
+            >
+              <h2 className="text-xl md:text-2xl text-accent uppercase font-black">
+                Mes 3
+              </h2>
+              <p className="text-base md:text-lg font-bold">Ventas totales:</p>
+              <p className="mb-2 text-5xl md:text-6xl lg:text-7xl font-black leading-none">
+                {formatNumberToCurrency(data.top3Total)} MXN
+              </p>
+              <p className="text-lg md:text-xl italic font-bold">
+                ¡Este mes marcaste la diferencia con tu dedicación y entusiasmo!
+              </p>
+            </motion.div>
+          )}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -714,7 +739,7 @@ export default function DigitalPresence({}: DigitalPresenceProps) {
               }}
               className="text-4xl md:text-5xl lg:text-6xl font-black text-primary mb-4"
             >
-              CND Top
+              {data.ranking}
             </motion.p>
           </motion.div>
           <motion.p
@@ -758,6 +783,93 @@ export default function DigitalPresence({}: DigitalPresenceProps) {
               priority
             />
           </div>
+        </div>
+      </section>
+      {/* SECTION 9 */}
+      <section className="bg-background min-h-screen relative overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="absolute bottom-[-60px] left-[-20px] md:bottom-[-120px] md:left-[-40px] p-2 md:p-4 z-0"
+        >
+          <Image
+            src="/img/form-1.png"
+            width={150}
+            height={50}
+            alt="Form"
+            className="w-[150px] h-auto md:w-[300px]"
+          />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="absolute top-[-60px] right-[-20px] md:top-[-120px] md:right-[-40px] p-2 md:p-4 z-0"
+        >
+          <Image
+            src="/img/form-2.png"
+            width={150}
+            height={50}
+            alt="Form"
+            className="w-[150px] h-auto md:w-[300px]"
+          />
+        </motion.div>
+        <div className="container mx-auto max-w-7xl justify-center items-center flex flex-col text-center min-h-screen z-10 relative px-4 md:px-0">
+          <motion.h1
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-xl md:text-4xl font-black text-primary mt-4"
+          >
+            ¡Gracias por ser parte de esta gran familia Natura!
+          </motion.h1>
+          <motion.h2
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="text-2xl md:text-xl text-secondary mt-4 font-black"
+          >
+            Nos llena de orgullo contar con consultorxs como tú, que cada día
+            hacen posible este sueño. El 2025 será un año lleno de retos, pero
+            también de recompensas. Sigamos construyendo juntas un futuro más
+            digital, más sostenible y más humano.
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            className="text-base md:text-md mt-4 max-w-4xl text-gray-500 font-bold"
+          >
+            ● Consulta tus eventos del 2025 aquí. <br></br>● Explora, aprende y
+            transforma tu negocio con nuestras herramientas digitales aqui la
+            Guía Interactiva Digitaliza tu negocio: Revista digital, Mis posteos
+            y Consultor Natura Digital.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <Image
+              src="/img/qr.png"
+              width={200}
+              height={133}
+              alt="Logo"
+              className="w-[200px] h-auto md:w-[300px] mt-8"
+            />
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            className="text-base md:text-md mt-4 max-w-4xl text-gray-500 font-bold"
+          >
+            Desarrollamos para ti esta guía interactiva que te permitirá
+            resolver dudas sobre cómo digitalizar tu negocio, integrando
+            nuestras herramientas clave. ¡Prepárate para llevar tu presencia
+            digital al siguiente nivel!
+          </motion.p>
         </div>
       </section>
     </main>
