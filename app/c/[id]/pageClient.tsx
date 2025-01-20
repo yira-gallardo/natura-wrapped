@@ -654,7 +654,7 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
 
                     {product.image && (
                       <Image
-                        src={`/img/productos/${product.image}.jpg`}
+                        src={`/img/p/${product.image}.jpg`}
                         alt={String(product.name ?? "")}
                         layout="fill"
                         objectFit="cover"
