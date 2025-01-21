@@ -90,6 +90,7 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
     <main>
       {/* SECTION 1 */}
       <section className="bg-background min-h-screen relative overflow-hidden">
+        {" "}
         <motion.div
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
@@ -119,44 +120,50 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
           />
         </motion.div>
         <div className="container mx-auto max-w-7xl justify-center items-center flex flex-col text-center min-h-screen z-10 relative px-4 md:px-0 py-8 md:py-0">
+          {" "}
           <motion.div
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
+            {" "}
             <Image
               src="/img/logo.png"
               width={200}
               height={133}
               alt="Logo"
               className="w-[200px] h-auto md:w-[300px]"
-            />
-          </motion.div>
+            />{" "}
+          </motion.div>{" "}
           <motion.h1
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-3xl md:text-8xl font-black text-primary mt-4"
           >
-            Natura Wrapped
-          </motion.h1>
+            {" "}
+            Natura Wrapped{" "}
+          </motion.h1>{" "}
           <motion.h2
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
             className="text-xl md:text-4xl text-secondary mt-4 font-black"
           >
-            ¡Cerramos el 2024 con grandes logros!
-          </motion.h2>
+            {" "}
+            ¡Cerramos el 2024 con grandes logros!{" "}
+          </motion.h2>{" "}
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.7 }}
             className="text-sm md:text-2xl mt-4 max-w-4xl text-gray-500"
           >
+            {" "}
             Queridx{" "}
             <span className="text-2xl md:text-4xl text-black font-black">
-              {data.nombreCdn}
+              {" "}
+              {data.nombreCdn}{" "}
             </span>{" "}
             Consultxr Natura Digital, este año fue increíble gracias a tu
             esfuerzo, dedicación y pasión. En este Wrapped CND 2024, celebramos
@@ -165,9 +172,11 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
             lograste con tu{" "}
             <span className="text-black font-black">Sitio Natura Digital</span>{" "}
             <span className="text-black font-black">
+              {" "}
               <Link href={data.urlSitio} target="blank" className="break-words">
-                {data.urlSitio}
-              </Link>
+                {" "}
+                {data.urlSitio}{" "}
+              </Link>{" "}
             </span>{" "}
             en el 2024!
           </motion.p>
@@ -437,13 +446,14 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
           transition={{ duration: 1, delay: 0.2 }}
           className="absolute bottom-[200px] right-[-300px] p-4 z-0 hidden md:block"
         >
+          {" "}
           <Image
             src="/img/icon-2.png"
             width={400}
             height={100}
             alt="Decorative icon"
-          />
-        </motion.div>
+          />{" "}
+        </motion.div>{" "}
         <motion.div
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -451,14 +461,16 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
           transition={{ duration: 1, delay: 0.2 }}
           className="absolute bottom-[-40px] right-[-200px] p-4 z-0 hidden md:block"
         >
+          {" "}
           <Image
             src="/img/icon-3-y.png"
             width={400}
             height={100}
             alt="Decorative icon"
-          />
-        </motion.div>
+          />{" "}
+        </motion.div>{" "}
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {" "}
           <motion.h2
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -466,8 +478,9 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center uppercase leading-tight"
           >
-            ¡Tus números hablan de éxito!
-          </motion.h2>
+            {" "}
+            ¡Tus números hablan de éxito!{" "}
+          </motion.h2>{" "}
           <motion.p
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -475,9 +488,10 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="text-base sm:text-lg md:text-xl text-center text-gray-600 mt-6 md:mt-8 mb-8 md:mb-12"
           >
+            {" "}
             Este año, tu esfuerzo y dedicación llevaron nuestros productos a más
-            hogares que nunca.
-          </motion.p>
+            hogares que nunca.{" "}
+          </motion.p>{" "}
           <motion.div
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -485,13 +499,16 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
             transition={{ duration: 0.8, delay: 0.7 }}
             className="max-w-4xl bg-white text-gray-800 p-4 sm:p-6 md:p-8 mx-auto text-center"
           >
+            {" "}
             <h3 className="text-base sm:text-lg md:text-3xl font-semibold text-gray-600">
-              Total de productos vendidos
-            </h3>
+              {" "}
+              Total de productos vendidos{" "}
+            </h3>{" "}
             <h4 className="text-5xl sm:text-6xl md:text-[100px] font-bold text-[#F35866] mt-2 leading-tight">
-              {formatNumber(animatedVendidos)}
-            </h4>
-          </motion.div>
+              {" "}
+              {formatNumber(animatedVendidos)}{" "}
+            </h4>{" "}
+          </motion.div>{" "}
           <motion.div
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -499,10 +516,11 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
             transition={{ duration: 0.8, delay: 0.9 }}
             className="max-w-4xl mx-auto px-4 md:px-0 mt-8 md:mt-12"
           >
-            <h4 className="text-xl sm:text-2xl md:text-4xl uppercase font-semibold mb-4 text-gray-600 text-center">
+            {/* <h4 className="text-xl sm:text-2xl md:text-4xl uppercase font-semibold mb-4 text-gray-600 text-center">
               Reconocimiento:
-            </h4>
+            </h4> */}
             <ul className="space-y-4">
+              {" "}
               <motion.li
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -510,12 +528,14 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
                 transition={{ duration: 0.6, delay: 1.1 }}
                 className="flex items-center justify-center text-base sm:text-lg md:text-xl lg:text-2xl"
               >
-                <span className="text-gray-400 mr-2 flex-shrink-0">•</span>
+                {" "}
+                <span className="text-gray-400 mr-2 flex-shrink-0">•</span>{" "}
                 <span>
+                  {" "}
                   Cada producto representa una historia de bienestar que
-                  compartiste.
-                </span>
-              </motion.li>
+                  compartiste.{" "}
+                </span>{" "}
+              </motion.li>{" "}
               <motion.li
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -523,13 +543,15 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
                 transition={{ duration: 0.6, delay: 1.3 }}
                 className="flex items-center justify-center text-base sm:text-lg md:text-xl lg:text-2xl"
               >
-                <span className="text-gray-400 mr-2 flex-shrink-0">•</span>
+                {" "}
+                <span className="text-gray-400 mr-2 flex-shrink-0">•</span>{" "}
                 <span>
-                  Eres parte de los momentos especiales de miles de personas.
-                </span>
-              </motion.li>
-            </ul>
-          </motion.div>
+                  {" "}
+                  Eres parte de los momentos especiales de miles de personas.{" "}
+                </span>{" "}
+              </motion.li>{" "}
+            </ul>{" "}
+          </motion.div>{" "}
           <motion.div
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -537,13 +559,15 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
             transition={{ duration: 0.8, delay: 1.5 }}
             className="max-w-3xl my-8 md:my-16 text-center mx-auto px-4 md:px-0"
           >
+            {" "}
             <p className="text-sm sm:text-base md:text-lg italic text-gray-600">
+              {" "}
               Tus ventas reflejan tu pasión y compromiso. En 2025, ¡estamos
               listos para llevar aún más bienestar a los hogares de la mano del
-              mundo digital contigo!
-            </p>
-          </motion.div>
-        </div>
+              mundo digital contigo!{" "}
+            </p>{" "}
+          </motion.div>{" "}
+        </div>{" "}
       </section>
       {/* SECTION 5 */}
       <section className="bg-background py-20 md:py-40 relative overflow-hidden">
@@ -677,7 +701,7 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
             className="text-xl md:text-2xl text-center mt-8 md:mt-12 italic text-gray-600 font-black mb-16 md:mb-32"
           >
             Con cada producto vendido, dejaste huella en el corazón de tus
-            clientas.
+            clientes.
           </motion.p>
         </div>
       </section>
@@ -703,7 +727,7 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
             <div className="w-full md:w-1/2 mb-4">
               <div className="md:max-w-md md:mx-auto">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-left leading-tight">
-                  Conectando con el mundo desde tu sitio Natura Digital
+                  Conectando con el mundo desde tu Sitio Natura Digital
                 </h2>
                 <p className="text-base sm:text-lg md:text-2xl lg:text-3xl text-highlight text-left">
                   Este año, tus esfuerzos en el mundo digital marcaron la
@@ -768,7 +792,7 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
                     •
                   </span>
                   <span className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-white/90">
-                    Tu sitio Natura Digital fue una puerta al éxito, llevando
+                    Tu Sitio Natura Digital fue una puerta al éxito, llevando
                     bienestar y belleza a más personas.
                   </span>
                 </motion.li>
@@ -931,7 +955,7 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
           viewport={{ once: true }}
           initial={{ opacity: 0, x: -100 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="absolute bottom-[-30px] left-[-10px] sm:bottom-[-60px] sm:left-[-20px] md:bottom-[-120px] md:left-[-40px] p-2 md:p-4 z-0"
+          className="absolute bottom-[-30px] left-[-10px] sm:bottom-[-60px] sm:left-[-20px] md:bottom-[-120px] md:left-[-40px] p-2 md:p-4 z-10"
         >
           <Image
             src="/img/form-1.png"
@@ -945,7 +969,7 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="absolute top-[-30px] right-[-10px] sm:top-[-60px] sm:right-[-20px] md:top-[-120px] md:right-[-40px] p-2 md:p-4 z-0"
+          className="absolute top-[-30px] right-[-10px] sm:top-[-60px] sm:right-[-20px] md:top-[-120px] md:right-[-40px] p-2 md:p-4 z-10"
         >
           <Image
             src="/img/form-2.png"
@@ -956,7 +980,7 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
           />
         </motion.div>
 
-        <div className="container mx-auto max-w-7xl justify-center items-center flex flex-col text-center min-h-screen z-10 relative px-4 sm:px-6 md:px-8">
+        <div className="container mx-auto max-w-7xl justify-center items-center flex flex-col text-center min-h-screen z-20 relative px-4 sm:px-6 md:px-8 pt-16 sm:pt-24 md:pt-32">
           <motion.h1
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -976,18 +1000,26 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
             también de recompensas. Sigamos construyendo juntas un futuro más
             digital, más sostenible y más humano.
           </motion.h2>
-          <motion.p
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.7 }}
             className="text-sm sm:text-base md:text-md mt-4 max-w-4xl text-gray-500 font-bold px-4 sm:px-6 md:px-0"
           >
-            Desarrollamos para ti esta guía interactiva que te permitirá
-            resolver dudas sobre cómo digitalizar tu negocio, integrando
-            nuestras herramientas clave. Revista Digital, Mis Posteos y
-            Consultor Natura Digital. ¡Prepárate para llevar tu presencia
-            digital al siguiente nivel!
-          </motion.p>
+            <p className="mb-4">
+              Desarrollamos para ti esta guía interactiva que te permitirá
+              resolver dudas sobre cómo digitalizar tu negocio, integrando
+              nuestras herramientas clave:
+            </p>
+            <ul className="list-none space-y-2 mb-4">
+              <li>■ Revista Digital</li>
+              <li>■ Mis Posteos</li>
+              <li>■ Consultor Natura Digital</li>
+            </ul>
+            <p>
+              ¡Prepárate para llevar tu presencia digital al siguiente nivel!
+            </p>
+          </motion.div>
           <motion.a
             href="https://drive.google.com/drive/u/0/folders/12wG6QoQY9EROJd2Qupw3csKpir3ajGWR"
             target="_blank"
