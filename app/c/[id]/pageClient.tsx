@@ -90,80 +90,73 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
     <main>
       {/* SECTION 1 */}
       <section className="bg-background min-h-screen relative overflow-hidden">
-        {" "}
         <motion.div
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="absolute bottom-[-120px] left-[-10px] md:bottom-[-120px] md:left-[-40px] p-1 md:p-4 z-0"
+          className="absolute bottom-0 left-0 md:bottom-[-120px] md:left-[-40px] p-1 md:p-4 z-0"
         >
           <Image
             src="/img/form-1.png"
             width={150}
             height={50}
             alt="Form"
-            className="w-[200px] h-auto md:w-[300px]"
+            className="w-[100px] h-auto sm:w-[150px] md:w-[300px]"
           />
         </motion.div>
         <motion.div
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="absolute top-[-120px] right-[-10px] md:top-[-120px] md:right-[-40px] p-1 md:p-4 z-0"
+          className="absolute top-0 right-0 md:top-[-120px] md:right-[-40px] p-1 md:p-4 z-0"
         >
           <Image
             src="/img/form-2.png"
             width={150}
             height={50}
             alt="Form"
-            className="w-[200px] h-auto md:w-[300px]"
+            className="w-[100px] h-auto sm:w-[150px] md:w-[300px]"
           />
         </motion.div>
-        <div className="container mx-auto max-w-7xl justify-center items-center flex flex-col text-center min-h-screen z-10 relative px-4 md:px-0 py-8 md:py-0">
-          {" "}
+        <div className="container mx-auto max-w-7xl justify-center items-center flex flex-col text-center min-h-screen z-10 relative px-2 sm:px-4 md:px-0 py-4 sm:py-8 md:py-0">
           <motion.div
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {" "}
             <Image
               src="/img/logo.png"
               width={200}
               height={133}
               alt="Logo"
-              className="w-[200px] h-auto md:w-[300px]"
-            />{" "}
-          </motion.div>{" "}
+              className="w-[100px] h-auto sm:w-[150px] md:w-[300px]"
+            />
+          </motion.div>
           <motion.h1
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-3xl md:text-8xl font-black text-primary mt-4"
+            className="text-xl sm:text-2xl md:text-8xl font-black text-primary mt-2 sm:mt-4"
           >
-            {" "}
-            Natura Wrapped{" "}
-          </motion.h1>{" "}
+            Natura Wrapped
+          </motion.h1>
           <motion.h2
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-xl md:text-4xl text-secondary mt-4 font-black"
+            className="text-base sm:text-lg md:text-4xl text-secondary mt-2 sm:mt-4 font-black"
           >
-            {" "}
-            ¡Cerramos el 2024 con grandes logros!{" "}
-          </motion.h2>{" "}
+            ¡Cerramos el 2024 con grandes logros!
+          </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="text-sm md:text-2xl mt-4 max-w-4xl text-gray-500"
+            className="text-xs sm:text-sm md:text-2xl mt-2 sm:mt-4 max-w-4xl text-gray-500"
           >
-            {" "}
             Queridx{" "}
-            <span className="text-2xl md:text-4xl text-black font-black">
-              {" "}
-              {data.nombreCdn}{" "}
+            <span className="text-lg sm:text-xl md:text-4xl text-black font-black">
+              {data.nombreCdn}
             </span>{" "}
             Consultxr Natura Digital, este año fue increíble gracias a tu
             esfuerzo, dedicación y pasión. En este Wrapped CND 2024, celebramos
@@ -172,11 +165,13 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
             lograste con tu{" "}
             <span className="text-black font-black">Sitio Natura Digital</span>{" "}
             <span className="text-black font-black">
-              {" "}
-              <Link href={data.urlSitio} target="blank" className="break-words">
-                {" "}
-                {data.urlSitio}{" "}
-              </Link>{" "}
+              <Link
+                href={data.urlSitio}
+                target="_blank"
+                className="break-words"
+              >
+                {data.urlSitio}
+              </Link>
             </span>{" "}
             en el 2024!
           </motion.p>
@@ -446,31 +441,29 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
           transition={{ duration: 1, delay: 0.2 }}
           className="absolute bottom-[200px] right-[-300px] p-4 z-0 hidden md:block"
         >
-          {" "}
           <Image
             src="/img/icon-2.png"
             width={400}
             height={100}
             alt="Decorative icon"
-          />{" "}
-        </motion.div>{" "}
+          />
+        </motion.div>
         <motion.div
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           initial={{ opacity: 0, x: 100 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="absolute bottom-[-40px] right-[-200px] p-4 z-0 hidden md:block"
+          className="absolute top-0 right-0 p-4 z-0 block"
         >
-          {" "}
           <Image
             src="/img/icon-3-y.png"
             width={400}
             height={100}
             alt="Decorative icon"
-          />{" "}
-        </motion.div>{" "}
+            className="w-32 md:w-64 lg:w-96"
+          />
+        </motion.div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          {" "}
           <motion.h2
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -478,9 +471,8 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center uppercase leading-tight"
           >
-            {" "}
-            ¡Tus números hablan de éxito!{" "}
-          </motion.h2>{" "}
+            ¡Tus números hablan de éxito!
+          </motion.h2>
           <motion.p
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -488,10 +480,9 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="text-base sm:text-lg md:text-xl text-center text-gray-600 mt-6 md:mt-8 mb-8 md:mb-12"
           >
-            {" "}
             Este año, tu esfuerzo y dedicación llevaron nuestros productos a más
-            hogares que nunca.{" "}
-          </motion.p>{" "}
+            hogares que nunca.
+          </motion.p>
           <motion.div
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -499,16 +490,13 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
             transition={{ duration: 0.8, delay: 0.7 }}
             className="max-w-4xl bg-white text-gray-800 p-4 sm:p-6 md:p-8 mx-auto text-center"
           >
-            {" "}
             <h3 className="text-base sm:text-lg md:text-3xl font-semibold text-gray-600">
-              {" "}
-              Total de productos vendidos{" "}
-            </h3>{" "}
+              Total de productos vendidos
+            </h3>
             <h4 className="text-5xl sm:text-6xl md:text-[100px] font-bold text-[#F35866] mt-2 leading-tight">
-              {" "}
-              {formatNumber(animatedVendidos)}{" "}
-            </h4>{" "}
-          </motion.div>{" "}
+              {formatNumber(animatedVendidos)}
+            </h4>
+          </motion.div>
           <motion.div
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -516,11 +504,7 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
             transition={{ duration: 0.8, delay: 0.9 }}
             className="max-w-4xl mx-auto px-4 md:px-0 mt-8 md:mt-12"
           >
-            {/* <h4 className="text-xl sm:text-2xl md:text-4xl uppercase font-semibold mb-4 text-gray-600 text-center">
-              Reconocimiento:
-            </h4> */}
             <ul className="space-y-4">
-              {" "}
               <motion.li
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -528,14 +512,12 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
                 transition={{ duration: 0.6, delay: 1.1 }}
                 className="flex items-center justify-center text-base sm:text-lg md:text-xl lg:text-2xl"
               >
-                {" "}
-                <span className="text-gray-400 mr-2 flex-shrink-0">•</span>{" "}
+                <span className="text-gray-400 mr-2 flex-shrink-0">•</span>
                 <span>
-                  {" "}
                   Cada producto representa una historia de bienestar que
-                  compartiste.{" "}
-                </span>{" "}
-              </motion.li>{" "}
+                  compartiste.
+                </span>
+              </motion.li>
               <motion.li
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -543,15 +525,13 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
                 transition={{ duration: 0.6, delay: 1.3 }}
                 className="flex items-center justify-center text-base sm:text-lg md:text-xl lg:text-2xl"
               >
-                {" "}
-                <span className="text-gray-400 mr-2 flex-shrink-0">•</span>{" "}
+                <span className="text-gray-400 mr-2 flex-shrink-0">•</span>
                 <span>
-                  {" "}
-                  Eres parte de los momentos especiales de miles de personas.{" "}
-                </span>{" "}
-              </motion.li>{" "}
-            </ul>{" "}
-          </motion.div>{" "}
+                  Eres parte de los momentos especiales de miles de personas.
+                </span>
+              </motion.li>
+            </ul>
+          </motion.div>
           <motion.div
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -559,15 +539,13 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
             transition={{ duration: 0.8, delay: 1.5 }}
             className="max-w-3xl my-8 md:my-16 text-center mx-auto px-4 md:px-0"
           >
-            {" "}
             <p className="text-sm sm:text-base md:text-lg italic text-gray-600">
-              {" "}
               Tus ventas reflejan tu pasión y compromiso. En 2025, ¡estamos
               listos para llevar aún más bienestar a los hogares de la mano del
-              mundo digital contigo!{" "}
-            </p>{" "}
-          </motion.div>{" "}
-        </div>{" "}
+              mundo digital contigo!
+            </p>
+          </motion.div>
+        </div>
       </section>
       {/* SECTION 5 */}
       <section className="bg-background py-20 md:py-40 relative overflow-hidden">
@@ -883,19 +861,65 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
               <h3 className="text-lg md:text-5xl font-semibold mb-4 text-primary">
                 Eres el lugar número:
               </h3>
-              <motion.p
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{
-                  duration: 1,
-                  delay: 1,
-                  type: "spring",
-                  stiffness: 100,
-                }}
-                className="text-4xl md:text-5xl lg:text-9xl font-black text-primary mb-4"
-              >
-                {data.ranking}
-              </motion.p>
+              <div className="bg-red-400 relative w-[350px] h-[350px] flex justify-center items-center mx-auto rounded-full shadow-2xl">
+                <div className="absolute top-0 left-[-60px] z-0">
+                  <motion.p
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{
+                      duration: 1,
+                      delay: 1,
+                      type: "spring",
+                      stiffness: 100,
+                    }}
+                    className="text-4xl md:text-5xl lg:text-9xl font-black text-primary mb-4"
+                  >
+                    <Image
+                      src="/img/form-1.png"
+                      width={150}
+                      height={50}
+                      alt="Form"
+                      className="w-[200px] h-auto"
+                    />
+                  </motion.p>
+                </div>
+                <div className="absolute top-0 right-[-60px] z-0">
+                  <motion.p
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{
+                      duration: 1,
+                      delay: 1.2,
+                      type: "spring",
+                      stiffness: 100,
+                    }}
+                    className="text-4xl md:text-5xl lg:text-9xl font-black text-primary mb-4"
+                  >
+                    <Image
+                      src="/img/form-2.png"
+                      width={150}
+                      height={50}
+                      alt="Form"
+                      className="w-[200px] h-auto"
+                    />
+                  </motion.p>
+                </div>
+                <div className="w-60 h-60 mx-auto bg-white rounded-full flex items-center justify-center mb-4 relative z-10 shadow-lg">
+                  <motion.p
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{
+                      duration: 1,
+                      delay: 1,
+                      type: "spring",
+                      stiffness: 100,
+                    }}
+                    className="text-[80px] md:text-[80px] font-black text-primary mb-4"
+                  >
+                    {data.ranking}
+                  </motion.p>
+                </div>
+              </div>
             </motion.div>
             <motion.p
               initial={{ opacity: 0, y: 30 }}
