@@ -986,25 +986,25 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
             width={300}
             height={100}
             alt="Form"
-            className="w-[100px] sm:w-[150px] md:w-[300px] h-auto"
+            className="w-[80px] sm:w-[150px] md:w-[300px] h-auto"
           />
         </motion.div>
         <motion.div
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="absolute top-[-30px] right-[-10px] sm:top-[-60px] sm:right-[-20px] md:top-[-120px] md:right-[-40px] p-2 md:p-4 z-10"
+          className="absolute top-0 right-0 sm:top-[-60px] sm:right-[-20px] md:top-[-120px] md:right-[-40px] p-2 md:p-4 z-10"
         >
           <Image
             src="/img/form-2.png"
             width={300}
             height={100}
             alt="Form"
-            className="w-[100px] sm:w-[150px] md:w-[300px] h-auto"
+            className="w-[80px] sm:w-[150px] md:w-[300px] h-auto"
           />
         </motion.div>
 
-        <div className="container mx-auto max-w-7xl justify-center items-center flex flex-col text-center min-h-screen z-20 relative px-4 sm:px-6 md:px-8 pt-16 sm:pt-24 md:pt-32">
+        <div className="container mx-auto max-w-7xl justify-center items-center flex flex-col text-center min-h-screen z-20 relative px-4 sm:px-6 md:px-8 pt-24 sm:pt-24 md:pt-32">
           <motion.h1
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -1021,7 +1021,7 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
           >
             Nos llena de orgullo contar con consultorxs como tú, que cada día
             hacen posible este sueño. El 2025 será un año lleno de retos, pero
-            también de recompensas. Sigamos construyendo juntas un futuro más
+            también de recompensas. Sigamos construyendo juntxs un futuro más
             digital, más sostenible y más humano.
           </motion.h2>
           <motion.div
