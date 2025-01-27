@@ -1000,16 +1000,16 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
             width={300}
             height={100}
             alt="Form"
-            className="w-[80px] sm:w-[150px] md:w-[300px] h-auto"
+            className="w-[60px] sm:w-[150px] md:w-[300px] h-auto"
           />
         </motion.div>
 
-        <div className="container mx-auto max-w-7xl justify-center items-center flex flex-col text-center min-h-screen z-20 relative px-4 sm:px-6 md:px-8 pt-24 sm:pt-24 md:pt-32">
+        <div className="container mx-auto max-w-7xl justify-center items-center flex flex-col text-center min-h-screen z-20 relative px-4 sm:px-6 md:px-8 pt-16 sm:pt-24 md:pt-32">
           <motion.h1
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-2xl sm:text-3xl md:text-4xl font-black text-primary mt-4"
+            className="text-xl sm:text-3xl md:text-4xl font-black text-primary mt-4"
           >
             ¡Gracias por ser parte de esta gran familia Natura!
           </motion.h1>
@@ -1017,7 +1017,7 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-lg sm:text-xl md:text-2xl text-secondary mt-4 font-black"
+            className="text-base sm:text-xl md:text-2xl text-secondary mt-4 font-black"
           >
             Nos llena de orgullo contar con consultorxs como tú, que cada día
             hacen posible este sueño. El 2025 será un año lleno de retos, pero
@@ -1028,7 +1028,7 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="text-sm sm:text-base md:text-md mt-4 max-w-4xl text-gray-500 font-bold px-4 sm:px-6 md:px-0"
+            className="text-xs sm:text-base md:text-md mt-4 max-w-4xl text-gray-500 font-bold px-4 sm:px-6 md:px-0"
           >
             <p className="mb-4">
               Desarrollamos para ti esta guía interactiva que te permitirá
@@ -1048,7 +1048,7 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
             href="https://drive.google.com/drive/u/0/folders/12wG6QoQY9EROJd2Qupw3csKpir3ajGWR"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-primary text-white font-bold py-3 px-6 rounded-full mt-6 sm:mt-8 hover:bg-secondary transition-colors duration-300 ease-in-out"
+            className="inline-block bg-primary text-white font-bold py-2 px-4 sm:py-3 sm:px-6 rounded-full mt-4 sm:mt-8 hover:bg-secondary transition-colors duration-300 ease-in-out text-sm sm:text-base"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
