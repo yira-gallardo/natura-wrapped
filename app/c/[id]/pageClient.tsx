@@ -67,7 +67,7 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
       name: data ? data[`producto${index}Nombre` as keyof DataItem] : null,
       sales: data ? data[`producto${index}Cantidad` as keyof DataItem] : null,
     };
-  }).filter((product) => product.image && product.name && product.sales);
+  }).filter((product) => product.name && product.sales);
 
   useEffect(() => {
     const matchedData = DATA.find(
@@ -651,22 +651,33 @@ export default function LandingPageClient({ codigo }: { codigo: string }) {
                   }}
                 >
                   {/* Card Content */}
-                  <div className="relative aspect-square mb-4 overflow-hidden bg-white w-3/4 mx-auto">
-                    {/* absolute posisioted number */}
-
-                    {product.image && (
-                      <Image
-                        src={`/img/p/${product.image}.jpg`}
-                        alt={String(product.name ?? "")}
-                        layout="fill"
-                        objectFit="cover"
-                      />
-                    )}
-                  </div>
-                  <h4 className="text-lg font-bold">{product.name}</h4>
-                  <p className="text-2xl font-black mt-2 text-primary">
-                    {product.sales ?? 0} unidades vendidas
-                  </p>
+                  {product.image !== null ? (
+                    <>
+                      <div className="relative aspect-square mb-4 overflow-hidden bg-white w-3/4 mx-auto">
+                        {product.image && (
+                          <Image
+                            src={`/img/p/${product.image}.jpg`}
+                            alt={String(product.name ?? "")}
+                            layout="fill"
+                            objectFit="cover"
+                          />
+                        )}
+                      </div>
+                      <h4 className="text-lg font-bold">{product.name}</h4>
+                      <p className="text-2xl font-black mt-2 text-primary">
+                        {product.sales ?? 0} unidades vendidas
+                      </p>
+                    </>
+                  ) : (
+                    <div className="relative aspect-square mb-4 overflow-hidden bg-white w-3/4 mx-auto px-16 min-h-[420px]">
+                      <div className="w-full h-full flex flex-col justify-center items-center">
+                        <h2 className="text-xl font-bold">{product.name}</h2>
+                        <p className="text-2xl font-black mt-2 text-primary">
+                          {product.sales ?? 0} unidades vendidas
+                        </p>
+                      </div>
+                    </div>
+                  )}
                 </motion.div>
               </div>
             ))}
